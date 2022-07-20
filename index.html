@@ -9,13 +9,19 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Collatz</h1>
+			<h1>COLLATZ</h1>
 			<label for="userInput"> Ditt tall</label>
 			<input type="number" id="userInput" name="userInput" placeholder="0" />
 			<button onclick="userSubmit()">Submit</button>
-			<div class="initialNumber">Utfører Collatz funksjonen på tallet = 0</div>
-			<div class="stepsTaken">Antall steg før tallet endte på 1: 0</div>
-			<div class="highestNumber">Høyeste tall nådd i sekvensen: 0</div>
+			<div class="initialNumber">
+				Utfører Collatz funksjonen på tallet = <span class="orange">0</span>
+			</div>
+			<div class="stepsTaken">
+				Antall steg før tallet endte på 1: <span class="yellow">0</span>
+			</div>
+			<div class="highestNumber">
+				Høyeste tall nådd i sekvensen: <span class="green">0</span>
+			</div>
 			<textarea name="steps" id="steps" cols="50" rows="30" disabled></textarea>
 			<script src="index.js"></script>
 		</div>

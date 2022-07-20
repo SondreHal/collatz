@@ -9,7 +9,7 @@ function userSubmit() {
 	let collatz = (num) => {
 		// loop till the given num is not 1
 		while (num != 1) {
-			//print the num
+			//push number to array
 			amount.push(num);
 
 			//if the number is even
@@ -20,29 +20,36 @@ function userSubmit() {
 				num = num * 3 + 1;
 			}
 		}
-
-		// print the last number
 	};
 
 	let amount = [];
 
+	//run Collatz code on user input number
 	collatz(userInput.value);
 
+	//pushes 1 into array since collatz code does not, in case user want to input 1
 	amount.push(1);
+
+	//displays steps in textarea
 	steps.textContent = amount;
 
+	//sorts array highest number to lowest
 	amount.sort(function (a, b) {
 		return b - a;
 	});
 
-	initialNumber.textContent = `Utfører Collatz funksjonen på tallet ${userInput.value}`;
-	console.log(amount);
+	//Shows number being collatz'd
+	initialNumber.innerHTML = `Utfører Collatz funksjonen på tallet <span class="orange">${userInput.value}</span>`;
 
-	highestNumber.textContent = `Antall steg før tallet endte på 1: ${amount.length - 1}`;
+	//Shows amount of steps taken to get to 1
+	highestNumber.innerHTML = `Antall steg før tallet endte på 1: <span class="yellow"> ${
+		amount.length - 1
+	}</span>`;
 
+	//Shows biggest number in steps to get to 1
 	if (userInput.value != 1) {
-		stepsTaken.textContent = `Høyeste tall nådd i sekvensen: ${amount[0]}`;
+		stepsTaken.innerHTML = `Høyeste tall nådd i sekvensen: <span class="green"> ${amount[0]}</span>`;
 	} else {
-		stepsTaken.textContent = `Høyeste tall nådd i sekvensen: ${1}`;
+		stepsTaken.innerHTML = `Høyeste tall nådd i sekvensen: <span class="green"> ${1}</span>`;
 	}
 }
